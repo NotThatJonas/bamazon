@@ -103,6 +103,7 @@ function purchaseItem() {
                             if (err) throw err;
                             console.log('Thank you for your purchase!');
 
+                        
                             connection.end();
                         } 
                     ); 
