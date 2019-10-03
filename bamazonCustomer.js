@@ -60,7 +60,8 @@ function purchaseItem() {
         var userChoice = [];
         for (var i = 0; i < res.length; i++) {
             // Push products to an array to store
-            userChoice.push(res[i].product_name);  
+            userChoice.push(res[i].product_name);
+
         }
         inquirer.prompt([
             {
@@ -76,11 +77,17 @@ function purchaseItem() {
             }
         ])
             .then(function (answer) {
+                console.log('nswer', answer);
+                
                 stock = res[userChoice.indexOf(answer.productChoice)].stock_quantity;
                 // update new stock
                 newStock = stock - answer.numItems;
                 //check items quantity and if quantiy < count sell product otherwise not enough
-                if (answer.numItems <= stock) {
+                if (answer.numItems <= stock) {                    
+                    for (var i = 0; i < res.length; i++){
+                        if (answer.productChoice == res[i].product_name)
+                        console.log("Your total is: " + answer.numItems * res[i].price)
+                    }
                     connection.query(
                         // insert new stock quantity into the database
                         "UPDATE bamazonProducts SET ? WHERE ?",
@@ -95,7 +102,7 @@ function purchaseItem() {
                         function (err) {
                             if (err) throw err;
                             console.log('Thank you for your purchase!');
-                            console.log("Your total is: " + answer.numItems * res[0].price)
+
                             connection.end();
                         } 
                     ); 
