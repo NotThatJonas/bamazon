@@ -16,9 +16,15 @@
 ## Walkthroughs
 ### 1) Customer View:
 
+* Run node bamazonCustomer.js to view initial product offereings.
+
 ![Bamazon_customer_shot1](https://user-images.githubusercontent.com/51797891/66098218-9c13c400-e556-11e9-86ef-9a77e8125026.jpg)
 
+* Choose the item you wish to buy.
+
 ![Bamazon_customer_shot2](https://user-images.githubusercontent.com/51797891/66098252-b6e63880-e556-11e9-9060-99b4f8326c78.jpg)
+
+* Enter how many of the product you wish to buy.
 
 ![Bamazon_customer_shot3](https://user-images.githubusercontent.com/51797891/66098268-c5345480-e556-11e9-9500-1a02721df80b.jpg)
 
